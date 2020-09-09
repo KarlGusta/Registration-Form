@@ -32,19 +32,19 @@
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 <h3 class="register-heading">Apply as a Employee</h3>
-                                <div class="row register-form">
+                                <div class="row register-form" action="registration-action" method="POST">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="First Name *" value="" />
+                                            <input type="text" class="form-control" placeholder="First Name *" name="firstName" value="" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Last Name *" value="" />
+                                            <input type="text" class="form-control" placeholder="Last Name *" name="lastName" value="" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Location *" value="" />
+                                            <input type="text" class="form-control" placeholder="Location *" name="location" value="" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control"  placeholder="Age *" value="" />
+                                            <input type="text" class="form-control"  placeholder="Age *" name="age" value="" />
                                         </div>
                                         <div class="form-group">
                                             <div class="maxl">
@@ -65,10 +65,10 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="email" class="form-control" placeholder="Your Email *" value="" />
+                                            <input type="email" class="form-control" placeholder="Your Email *" name="email" value="" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" minlength="10" maxlength="10" name="txtEmpPhone" class="form-control" placeholder="Your Phone *" value="" />
+                                            <input type="text" minlength="10" maxlength="10" class="form-control" placeholder="Your Phone *" name="phoneNumber" value="" />
                                         </div>
                                         <div class="form-group">
                                             <select class="form-control">
