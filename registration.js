@@ -1,15 +1,19 @@
 var express = require('express');
 var path = require('path');
 var mysql = require('mysql');
-const { response } = require('express');
+var bodyParser = require('body-parser');
 
 var app = express();
 
 // Server static files
 // app.use(express.static("public"));
 
+// To extract the form data from the html file
+app.use(bodyParser.urlencoded({extended : true}));
+app.use(bodyParser.json());
+
 app.get('/', function(request,response) {
-    response.sendFile(__dirname + '/public/registration-form.html');
+    response.sendFile(__dirname + '/registration-form.html');
 })
 
 // Database connection
@@ -31,14 +35,13 @@ connection.connect(function(error) {
 
 app.post('/registration-action', function(request,response) {
     var employee = {
-        firstName: request.body.firstName,
-        lastName: request.body.lastName,
+        firstname: request.body.firstname,
+        lastname: request.body.lastname,
         location: request.body.location,
         age: request.body.age,
-        gender: request.body.gender,
         email: request.body.email,
-        phoneNumber: request.body.phoneNumber
-    }
+        phonenumber: request.body.phonenumber
+    };
 
     connection.query('INSERT INTO employees SET?', employee, function(error, result) {
         if(error) {
